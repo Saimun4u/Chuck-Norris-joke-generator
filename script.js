@@ -1,4 +1,6 @@
 const btn = document.getElementById('btn');
+let joke = document.getElementById('joke');
+console.log(joke);
 
 const apiKey = 'i2F6rD9wRaTrsK2PwFWt4A==sToeCf2rXoDpB5Oc';
 
@@ -15,6 +17,7 @@ async function getJoke() {
   const response = await fetch(apiURL, options);
   const data = await response.json();
   console.log(data.joke);
+  joke.textContent = data.joke;
 }
 
 btn.addEventListener('click', getJoke);
